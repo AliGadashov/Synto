@@ -1,0 +1,137 @@
+@media (max-width: 1400px) and (min-width: 991px) {
+  main {
+    > div {
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: repeat(5, max-content) !important;
+      grid-template-areas:
+        "top top"
+        "total analysis"
+        "welcome ongoing_project"
+        "upcoming ongoing_task"
+        "summary summary" !important;
+    }
+  }
+}
+@media (max-width: 991px) {
+  body {
+    grid-template-columns: 0px 1fr !important;
+
+    &:has(input):has(:checked) {
+      grid-template-columns: 256px 1fr !important;
+      aside {
+        > div:nth-child(1) {
+          > div {
+            background-image: url(../img/desktop-dark.png) !important;
+          }
+        }
+        > div:nth-child(2) {
+          > ul {
+            > li {
+              > p {
+                display: block !important;
+              }
+              > ul {
+                > li {
+                  > div {
+                    grid-template-columns: max-content 1fr max-content !important;
+                    > svg:nth-child(3) {
+                      display: block !important;
+                    }
+                    > a {
+                      display: block !important;
+                    }
+                    &:hover {
+                      cursor: pointer !important;
+                      > a {
+                        color: var(--white) !important;
+                      }
+                      > svg {
+                        > path {
+                          fill: var(--white !important);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > li:nth-child(1) {
+              > ul {
+                > li:nth-child(1) {
+                  > div:nth-child(1) {
+                    > svg {
+                      > path {
+                        fill: var(--white) !important;
+                      }
+                    }
+                    > a {
+                      color: var(--white) !important;
+                    }
+                  }
+                  > div:nth-child(2) {
+                    > svg {
+                      > path {
+                        fill: none !important;
+                        stroke: var(--aside-text) !important;
+                      }
+                    }
+                    &:hover {
+                      > svg {
+                        > path {
+                          stroke: var(--white) !important;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    main {
+      > div {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(8, max-content) !important;
+        grid-template-areas:
+          "top"
+          "total"
+          "analysis"
+          "welcome"
+          "ongoing_project"
+          "upcoming"
+          "ongoing_task"
+          "summary" !important;
+
+        > .summary {
+          > .summery-middle {
+            > table {
+              > tbody {
+                > tr {
+                  > td {
+                    &:nth-child(3) {
+                      height: 150px !important;
+                      > .team-avatar {
+                        flex-direction: column !important;
+                        img {
+                          width: 100%;
+                          border-radius: 50%;
+                          transform: translateX(0) !important;
+                          &:hover {
+                            cursor: pointer;
+                            transform: translate(0, -5px) !important;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
